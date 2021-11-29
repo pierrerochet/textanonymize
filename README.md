@@ -79,7 +79,6 @@ text_an = ent.collec.replace(text)
 from textanonymize.lang.fr import fr_name_provider
 
 text = "Je suis Michel Dupont, mon numéro est 0600000000 et mon adresse email est my@email.com"
-
 ent_collec = fr_phone_number_provider.find(text)
 ```
 
@@ -118,8 +117,7 @@ provider = MultiProvider([
     ])
 
 text = "Je suis Michel Dupont, mon numéro est 0600000000 et mon adresse email est my@email.com"
-
-text_an = fr_provider.find(text)
+ent_collec = fr_provider.find(text)
 ```
 
 
@@ -127,7 +125,6 @@ text_an = fr_provider.find(text)
 ## Build a custom provider
 
 textanonymize provides class to help you to build your custom providers.
-
 
 ```python
 from textanonymize.provider import CallableProvider
@@ -146,5 +143,7 @@ callable_provider = CallableProvider(find_with_regex, "email_address")
 callable_provider.replace("Mon adresse email est my@email.com")
 # Mon adresse email est <privacy_data: email_address>
 ```
+
+Please note that the callable must always return a dict with keys : _start_, _end_ and _match_
 
 
