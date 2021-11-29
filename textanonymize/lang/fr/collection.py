@@ -26,7 +26,7 @@ fr_phone_number_provider = CallableProvider(
 fr_name_provider = RegexProvider.from_word_list(
     "name",
     path=[
-        "./textanonymize/lang/fr/resources/patronymes.csv",
-        "./textanonymize/lang/fr/resources/prenoms.csv",
+        "./textanonymize/lang/fr/resources/patronymes.txt",
+        "./textanonymize/lang/fr/resources/prenoms.txt",
     ],
 )
