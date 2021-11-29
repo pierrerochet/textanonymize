@@ -80,7 +80,7 @@ from textanonymize.lang.fr import fr_name_provider
 
 text = "Je suis Michel Dupont, mon numéro est 0600000000 et mon adresse email est my@email.com"
 
-text_an = fr_phone_number_provider.find(text)
+ent_collec = fr_phone_number_provider.find(text)
 ```
 
 Here is specific providers available :
